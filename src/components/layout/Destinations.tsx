@@ -1,4 +1,3 @@
-import React from "react";
 import { destinations } from "../../constant/data";
 import DestinationCard from "../common/DestinationCard";
 

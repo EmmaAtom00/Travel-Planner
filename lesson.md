@@ -107,21 +107,35 @@ const NavLinks = ({ context }) => {
 
 ---
 
+---
+
 ## 6. API Integration and Asynchronous Fetching
 
 Integrating external APIs like Amadeus involves creating services that handle network requests and authentication.
 
 ### Key Concepts:
+- **Environment Variables**: Use `.env` files to store sensitive data like API keys. In Vite, prefix variables with `VITE_` (e.g., `VITE_AMADEUS_API_KEY`) to expose them to the client.
 - **Service Pattern**: Separating API logic into standard service objects (e.g., `amadeusService`) keeps components clean.
+- **OAuth2 Flow**: Amadeus uses OAuth2, requiring a POST request to get an access token before making other API calls.
 - **Async/Await**: Used for handling asynchronous operations like `fetch`.
-- **Loading States**: Managing UI states (loading, error, success) while waiting for API responses.
 
-### Example Service:
+### Example Service with OAuth2:
 ```typescript
+const getAccessToken = async () => {
+  const response = await fetch(`${BASE_URL}/v1/security/oauth2/token`, {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: `grant_type=client_credentials&client_id=${API_KEY}&client_secret=${API_SECRET}`,
+  });
+  const data = await response.json();
+  return data.access_token;
+};
+
 export const amadeusService = {
   searchCity: async (keyword: string) => {
-    const response = await fetch(`${BASE_URL}/reference-data/locations/cities?keyword=${keyword}`, {
-      headers: { Authorization: `Bearer ${accessToken}` }
+    const token = await getAccessToken();
+    const response = await fetch(`${BASE_URL}/v1/reference-data/locations?subType=CITY&keyword=${keyword}`, {
+      headers: { Authorization: `Bearer ${token}` }
     });
     const data = await response.json();
     return data.data;

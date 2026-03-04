@@ -12,8 +12,8 @@ export const featuresData = [
     description: "Access data-driven rankings and sentiment analysis for hotels and attractions."
   },
   {
-    title: "Nearby Sights",
-    description: "Instantly find top-rated points of interest near your current location."
+    title: "Hotel Search",
+    description: "Find the best hotels and accommodations at your destination."
   },
   {
     title: "Global Reach",
@@ -28,7 +28,7 @@ export const featuresData = [
 
 export const destinations = [
   {
-    id: "1",
+    id: "PAR",
     city: "Paris",
     country: "France",
     description:
@@ -36,7 +36,7 @@ export const destinations = [
     image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80",
   },
   {
-    id: "2",
+    id: "TYO",
     city: "Tokyo",
     country: "Japan",
     description:
@@ -44,7 +44,7 @@ export const destinations = [
     image: "https://images.unsplash.com/photo-1549692520-acc6669e2f0c?auto=format&fit=crop&w=800&q=80",
   },
   {
-    id: "3",
+    id: "NYC",
     city: "New York",
     country: "USA",
     description:
@@ -52,7 +52,7 @@ export const destinations = [
     image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80",
   },
   {
-    id: "4",
+    id: "SYD",
     city: "Sydney",
     country: "Australia",
     description:
@@ -60,7 +60,7 @@ export const destinations = [
     image: "https://images.unsplash.com/photo-1506973035872-a4f56d2a7c3e?auto=format&fit=crop&w=800&q=80",
   },
   {
-    id: "5",
+    id: "RIO",
     city: "Rio de Janeiro",
     country: "Brazil",
     description:
@@ -68,7 +68,7 @@ export const destinations = [
     image: "https://images.unsplash.com/photo-1506619216599-9d16bb33f0d5?auto=format&fit=crop&w=800&q=80",
   },
   {
-    id: "6",
+    id: "CPT",
     city: "Cape Town",
     country: "South Africa",
     description:

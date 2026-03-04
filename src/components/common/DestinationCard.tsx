@@ -1,4 +1,5 @@
 import { MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 import type { DestinationCardProps } from "../../constant/types";
 
 export default function DestinationCard({
@@ -9,7 +10,7 @@ export default function DestinationCard({
   id,
 }: DestinationCardProps) {
   return (
-    <div className="max-w-sm bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+    <div className="max-w-sm bg-white rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
       {/* Image at top */}
       <div className="w-full h-48 overflow-hidden">
         <img
@@ -34,9 +35,12 @@ export default function DestinationCard({
         <p className="text-gray-700 text-sm mt-2 flex-1">{description}</p>
 
         {/* Button */}
-        <button className="mt-4 bg-primary-color text-white px-4 py-2 rounded">
+        <Link
+          to={`/location-details/${id}`}
+          className="mt-4 bg-[#007C87] text-white px-4 py-2 rounded text-center font-bold hover:bg-[#00666f] transition-colors"
+        >
           View details
-        </button>
+        </Link>
       </div>
     </div>
   );

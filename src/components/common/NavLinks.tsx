@@ -9,7 +9,7 @@ const NavLinks = ({ context, onClose }: NavLinksProps) => {
   const links = [
     { name: "Home", path: "/" },
     { name: "Search", path: "/location-search" },
-    { name: "Nearby", path: "/nearby-search" },
+    { name: "Hotels", path: "/hotel-search" },
   ];
 
   // Base styles for different contexts

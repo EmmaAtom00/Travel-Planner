@@ -104,8 +104,8 @@ const Home = () => {
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
                 <h1 className="text-4xl font-bold text-[#007C87]">03</h1>
-              <h2 className="text-xl font-bold mb-2">Discover Nearby</h2>
-              <p>Find the top-rated spots right in your current neighborhood.</p>
+              <h2 className="text-xl font-bold mb-2">Find Hotels</h2>
+              <p>Search for top-rated accommodations for your next stay.</p>
             </div>
           </div>
         </section>

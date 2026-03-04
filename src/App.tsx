@@ -9,7 +9,9 @@ import LocationSearch from "./pages/locations/LocationSearch";
 import LocationDetails from "./pages/locations/LocationDetails";
 import LocationPhotos from "./pages/locations/LocationPhotos";
 import LocationReviews from "./pages/locations/LocationReviews";
-import NearbySearch from "./pages/locations/NearbySearch";
+import HotelSearch from "./pages/locations/HotelSearch";
+import Booking from "./pages/Booking";
+import ReviewForm from "./pages/ReviewForm";
 
 function App() {
   return (
@@ -25,7 +27,9 @@ function App() {
           <Route path="/location-details/:id" element={<LocationDetails />} />
           <Route path="/location-photos/:id" element={<LocationPhotos />} />
           <Route path="/location-reviews/:id" element={<LocationReviews />} />
-          <Route path="/nearby-search" element={<NearbySearch />} />
+          <Route path="/hotel-search" element={<HotelSearch />} />
+          <Route path="/booking/:id" element={<Booking />} />
+          <Route path="/review/:id" element={<ReviewForm />} />
 
           {/* Auth routes disabled for now */}
           {/* <Route path="/auth/sign-in" element={<SignIn />} /> */}

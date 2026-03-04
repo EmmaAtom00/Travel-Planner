@@ -2,22 +2,24 @@ import { Search } from "lucide-react";
 import Input from "./Input";
 import { useRef, useState } from "react";
 
-const SearchBar = () => {
+interface SearchBarProps {
+  onSearch?: (value: string) => void;
+  placeholder?: string;
+}
+
+const SearchBar = ({ onSearch, placeholder = "Search cities or countries..." }: SearchBarProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [value, setValue] = useState("");
 
   const handleSubmit = () => {
     if (value.trim() === "") return;
-    console.log("Searching for:", value);
-    // You can navigate or fetch results here
-  };
-
-  const focusInput = () => {
-    inputRef.current?.focus();
+    if (onSearch) {
+      onSearch(value);
+    }
   };
 
   return (
-    <div className=" lg:max-w-2/4 max-w-3/4 mx-auto">
+    <div className="w-full max-w-2xl mx-auto">
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -27,21 +29,14 @@ const SearchBar = () => {
       >
         <Input
           type="text"
-          placeholder="Search cities or countries..."
+          placeholder={placeholder}
           value={value}
           setValue={setValue}
           ref={inputRef}
           icon={<Search color="grey" />}
-          onIconClick={handleSubmit} // icon triggers search
+          onIconClick={handleSubmit}
         />
         <button type="submit" className="hidden" aria-hidden="true" />
-        <button
-          type="button"
-          className="hidden px-4 py-2 bg-gray-200 rounded"
-          onClick={focusInput}
-        >
-          Focus
-        </button>
       </form>
     </div>
   );
