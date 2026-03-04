@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ChevronLeft, Star, Send, Heart } from "lucide-react";
 
 const ReviewForm = () => {
