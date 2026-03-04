@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { ChevronLeft, Info, Calendar, Users, MapPin, CheckCircle2, CreditCard } from "lucide-react";
-import { amadeusService, type Hotel } from "../services/amadeus";
+import { type Hotel } from "../services/amadeus";
 
 const Booking = () => {
   const { id } = useParams<{ id: string }>();
